@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "YouTube Mute Words",
+  "version": "0.0.1",
+  "description": "Hides Youtube videos with specified words in title",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
