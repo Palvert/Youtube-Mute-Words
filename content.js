@@ -1,34 +1,51 @@
-function fun() {
-    let muted_words = ["QUIT", "BROKEN", "WAKE UP"];
-    
+const TITLE_ELEM_NAME_MAIN_PAGE = "h3 a span";
+const TITLE_ELEM_NAME_SUBS_PAGE = "#video-title-link yt-formatted-string";
+
+let counter_video_blocked = 0;
+let block_mode = "hide"; //hide, mark
+let muted_words = [
+    "Valorant", "Chillstep", "Lo-fi", "#shorts", "Gross"
+];
+
+
+function filter_out() {
     const video_grid = document.querySelectorAll("#contents ytd-rich-item-renderer");
+    video_grid.forEach((element) => {
+        const title = element.querySelector(TITLE_ELEM_NAME_MAIN_PAGE) || element.querySelector(TITLE_ELEM_NAME_SUBS_PAGE);
 
-    video_grid.forEach( (element) => {
-        const title = element.querySelector("#video-title");
+        if (title) {
+            let title_has_muted_word = false;
 
-        let title_has_muted_word = false;
-
-        for (let i = 0; i < muted_words.length; i++) {
-            if (title.textContent.match(muted_words[i])) {
-                title_has_muted_word = true;
-                break;
+            for (let i = 0; i < muted_words.length; i++) {
+                if (title.textContent.toLowerCase().search(muted_words[i].toLowerCase()) != -1) {
+                    title_has_muted_word = true;
+                    break;
+                }
             }
-        }
 
-        if (title_has_muted_word) {
-            title.style.color = "red";
-            title.textContent = "BLOCKED";
-        } else {
-            title.style.color = "green";
+            if (title_has_muted_word) {
+                counter_video_blocked++;
+                console.log(`Video blocked: ${counter_video_blocked}`);
+                console.log(`└blocked: ${title.textContent}`); // DEBUG
+
+                switch (block_mode) {
+                    case("hide"):
+                        element.remove();
+                        break;
+                    case("mark"):
+                        title.style.color = "red";
+                        title.textContent = "BLOCKED";
+                        break;
+                }
+            }
         }
     });
 }
 
-// Run initially
-fun();
+
+filter_out();
+setInterval(filter_out, 1000);
 
 // Observe DOM changes for dynamic content
-const observer = new MutationObserver(() => {
-    fun();
-});
+const observer = new MutationObserver(filter_out());
 observer.observe(document.body, { childList: true, subtree: true });
