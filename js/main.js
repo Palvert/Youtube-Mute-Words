@@ -4,7 +4,7 @@ const TITLE_ELEM_NAME_SUBS_PAGE = "#video-title-link yt-formatted-string";
 let counter_video_blocked = 0;
 let block_mode = "hide"; //hide, mark
 let muted_words = [
-    "Valorant", "Chillstep", "Lo-fi", "#shorts", "Gross"
+    "Valorant", "Chillstep", "Lo-fi", "#shorts", "Gross", "AI"
 ];
 
 
