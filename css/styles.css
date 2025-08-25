@@ -8,8 +8,9 @@
     --border_clr: #2d343c;
 
     /* text */
-    --text_clr:  #cccccc;
-    --text_clr_dim: #999999;
+    --clr_text:  #cccccc;
+    --clr_text_dim: #999999;
+    --clr_text_shygray: #4c4c4c;
     --clr_red: #aa2828;
     --clr_accent:    #475e80;
     --clr_accent_light:    #5c7aa6;
@@ -25,7 +26,10 @@
     /* other */
     --border_width_frame: 1px;
     --text_size_title: 16px;
-    --text_size_normal: 16px;
+    --text_size_normal: 18px;
+    --text_size_shy: 14px;
+    --main_frame_width: 300px;
+    --main_frame_height: 500px;
 }
 
 body {
@@ -53,21 +57,23 @@ body {
       "YTFI" 738,
       "YTLC" 514,
       "YTUC" 712;
-    color: var(--text_clr);
+    color: var(--clr_text);
 }
 
 #gui_title_frame {
     display: flex;
-    /* border: var(--border_width_frame) solid var(--border_clr); */
+    border-bottom: var(--border_width_frame) solid var(--border_clr);
     padding: 10px;
+    width: var(--main_frame_width);
     height: var(--text_size_title);
     align-items: center;
+    justify-content: center;
 
     #text_part_1 {
         color: var(--clr_red);
     }
     #text_part_2 {
-        color: var(--text_clr_dim);
+        color: var(--clr_text_dim);
         margin-left: 10px;
     }
 }
@@ -76,17 +82,16 @@ body {
     display: flex;
     flex-direction: column;
     justify-items: center;
-    border-top: var(--border_width_frame) solid var(--border_clr);
-    padding: 10px;
-    width: 300px;
-    height: 400px;
+    width:  var(--main_frame_width);
+    height: var(--main_frame_height);
+    margin-top: 10px;
 
     .header {
         align-self: start;
         font-size: 16px;
         height: var(--text_size_title);
         margin: 4px;
-        margin-left: 24px;
+        margin-left: 10px;
     }
 
     .title {
@@ -95,13 +100,33 @@ body {
 
     .text_normal {
         color: var(--clr_accent_light);
-        font-size:18px;
+        font-size: var(--text_size_normal);
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .text_gray {
+        color: var(--clr_text_dim);
+        font-size: var(--text_size_normal);
+    }
+
+    .text_shy {
+        color: var(--clr_text_shygray);
+        font-size: var(--text_size_normal);
+        margin-top: 4px;
+        margin-bottom: 8px;
     }
 
     hr {
         border: 2px solid var(--border_clr);
         border-radius: 2px;
-        width: 250px;
+        width: 280px;
+    }
+
+    label {
+        color: var(--clr_accent_light);
+        font-size: var(--text_size_normal);
+        /* font-weight: 700; */
     }
 }
 
@@ -116,7 +141,7 @@ body {
     font-size: 14px;
     font-weight: bold;
     text-align: center;
-    color: var(--text_clr);
+    color: var(--clr_text);
     padding: 4px 0px 4px 0px;
     margin: 8px;
 }
@@ -150,11 +175,16 @@ body {
     width: 210px;
     height: 30px;
     background-color: var(--bg_clr);
-    color: var(--text_clr);
+    color: var(--clr_text);
     border: 4px ridge var(--clr_accent);
 }
 .input_text:focus {
     border: 4px ridge var(--clr_accent_light);
+}
+
+.input_radio {
+    background-color: var(--bg_clr);
+    color: var(--clr_text);
 }
 
 #div_word_input {
@@ -163,6 +193,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     height: 52px;
+    border: var(--border_width_frame) solid var(--border_clr);
 }
 
 #btn_add_word {
@@ -175,12 +206,32 @@ body {
     width: 80px;
 }
 
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle_section {
+    margin-left: 13px;
+    margin-right: 13px;
+    margin-bottom: 20px;
+}
+
+#div_donation_header {
+    text-align: center;
+}
+
+#contacts_email {
+    font-size: var(--text_size_shy);
+}
 
 /* BLACKLIST PAGE
  * ================================================================================ */
 
 #btn_goback {
-    width: 100px;
+    width: 80px;
 }
 
 #div_goback {

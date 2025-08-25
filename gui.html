@@ -15,16 +15,38 @@
             <h4 id="text_part_2"> Mute Words</h4>
         </div>
         <div class="frame">
+            <!-- STATS section -->
+            <h1 class="header">📊 Stats</h1>
+            <hr>
+            <div class="middle_section" style="margin-top: 10px; margin-bottom: 10px;">
+                <label>Videos hidden on the page: 0</label>
+            </div>
+
+            <!-- SETTINGS section -->
             <h1 class="header">⚙️ Settings</h1>
             <hr>
-            different settings here
+            <div class="middle_section">
+                <label>Test:</label>
+                <input class="input_radio" type="radio"></input>
+            </div>
 
-            <!-- word list section -->
+            <!-- WORD LIST section -->
             <h1 class="header">📑 Word lists</h1>
             <hr>
-            <div id="div_word_input">
-                <input class="input_text" type="text" placeholder="Enter a word or text to mute"></input>
-                <button id="btn_add_word" class="btn_normal">Add</button>
+            <div class="middle_section">
+                <p class="text_shy">
+                Add words or text in a list:
+                </p>
+                <div id="div_word_input">
+                    <div class="horizontal">
+                        <label>Test:</label>
+                        <input class="input_radio" type="radio"></input>
+                    </div>
+                    <div class="horizontal">
+                        <input class="input_text" type="text" placeholder="Enter a word or text to mute"></input>
+                        <button id="btn_add_word" class="btn_normal">Add</button>
+                    </div>
+                </div>
             </div>
             <div class="btns_horizontal">
                 <button id="btn_open_blacklist" class="btn_normal">⚫ Blacklist</button>
@@ -32,9 +54,18 @@
             </div>
 
             <!-- donation support section -->
-            <h1 class="header">🪙 Support the developer</h1>
+            <div id="div_donation_header">
+                <h1 id="header_donation" class="header">🤗 Like it? - Buy me fries? 🍟</h1>
+            </div>
             <hr>
-            <button id="btn_open_donate_usdt" class="btn_normal">USDT</button>
+            <div class="middle_section">
+                <button id="btn_open_donate_usdt" class="btn_normal">USDT</button>
+            </div>
+            <div class="middle_section">
+                <p id="contacts_email" class="text_shy">
+                Contacts: *****@gmail.com
+                </p>
+            </div>
         </div>
 
         <script src="js/gui.js"></script>
