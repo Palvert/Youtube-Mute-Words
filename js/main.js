@@ -1,10 +1,10 @@
 const TITLE_ELEM_NAME_MAIN_PAGE = "h3 a span";
 const TITLE_ELEM_NAME_SUBS_PAGE = "#video-title-link yt-formatted-string";
 
-let counter_video_blocked = 0;
+let counter_videos_hidden = 0;
 let block_mode = "hide"; //hide, mark
 let muted_words = [
-    "Valorant", "Chillstep", "Lo-fi", "#shorts", "Gross", "AI"
+    "Valorant", "Chillstep", "Lo-fi", "#shorts", "Gross", "AI", "LIFE"
 ];
 
 
@@ -24,9 +24,7 @@ function filter_out() {
             }
 
             if (title_has_muted_word) {
-                counter_video_blocked++;
-                console.log(`Video blocked: ${counter_video_blocked}`);
-                console.log(`└blocked: ${title.textContent}`); // DEBUG
+                counter_videos_hidden++;
 
                 switch (block_mode) {
                     case("hide"):
@@ -42,10 +40,8 @@ function filter_out() {
     });
 }
 
-
 filter_out();
-setInterval(filter_out, 1000);
 
 // Observe DOM changes for dynamic content
-const observer = new MutationObserver(filter_out());
+const observer = new MutationObserver(filter_out);
 observer.observe(document.body, { childList: true, subtree: true });

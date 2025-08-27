@@ -40,6 +40,7 @@ body {
     background-color: var(--bg_clr);
     border: 1px solid var(--border_clr);
     border-collapse: collapse;
+    max-width:  var(--main_frame_width);
 
     font-family: "Roboto Flex", sans-serif;
     font-optical-sizing: auto;
@@ -63,8 +64,8 @@ body {
 #gui_title_frame {
     display: flex;
     border-bottom: var(--border_width_frame) solid var(--border_clr);
-    padding: 10px;
-    width: var(--main_frame_width);
+    padding: 4px 0px 4px 0px;
+    min-width: var(--main_frame_width);
     height: var(--text_size_title);
     align-items: center;
     justify-content: center;
@@ -82,8 +83,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-items: center;
-    width:  var(--main_frame_width);
-    height: var(--main_frame_height);
+    max-width:  var(--main_frame_width);
+    /* height: var(--main_frame_height); */
     margin-top: 10px;
 
     .header {
@@ -172,13 +173,15 @@ body {
 
 .input_text {
     font-size: 16px;
-    width: 210px;
+    width: 180px;
     height: 30px;
     background-color: var(--bg_clr);
     color: var(--clr_text);
     border: 4px ridge var(--clr_accent);
+    margin-left: 8px;
+    padding-left: 8px;
 }
-.input_text:focus {
+.input_text:hover {
     border: 4px ridge var(--clr_accent_light);
 }
 
@@ -189,9 +192,9 @@ body {
 
 #div_word_input {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+    /* align-items: center; */
     height: 52px;
     border: var(--border_width_frame) solid var(--border_clr);
 }
@@ -209,7 +212,7 @@ body {
 .horizontal {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -217,6 +220,37 @@ body {
     margin-left: 13px;
     margin-right: 13px;
     margin-bottom: 20px;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    .text_counter_name {
+        color: var(--clr_accent_light);
+        font-size: var(--text_size_normal);
+        margin: 0 10px;
+
+        /* For Border */
+        /* border: 2px solid var(--clr_accent_darker); */
+        /* border-top: none; */
+        /* border-right: none; */
+        /* padding: 0 4px 0 4px; */
+    }
+
+    .text_counter_dynamic {
+        margin: 0;
+        padding: 0;
+        color: var(--clr_accent_lighter); 
+        font-size: var(--text_size_normal);
+
+        /* For Border */
+        /* border: 2px solid var(--clr_accent_darker); */
+        /* border-bottom: none; */
+        /* border-left: none; */
+        /* padding: 0 4px 0 4px; */
+    }
 }
 
 #div_donation_header {
@@ -227,6 +261,8 @@ body {
     font-size: var(--text_size_shy);
 }
 
+
+
 /* BLACKLIST PAGE
  * ================================================================================ */
 
@@ -234,7 +270,7 @@ body {
     width: 80px;
 }
 
-#div_goback {
+#div_gobac {
     /* min-height: 40px; */
     height: 60px;
 }
