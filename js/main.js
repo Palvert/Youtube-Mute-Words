@@ -1,16 +1,26 @@
 const TITLE_ELEM_NAME_MAIN_PAGE = "h3 a span";
 const TITLE_ELEM_NAME_SUBS_PAGE = "#video-title-link yt-formatted-string";
+const VIDEO_GRID = document.querySelectorAll("#contents ytd-rich-item-renderer");
+
+// Save a list of words
+const words = ["SCARED"];
+browser.storage.local.set({ wordList: words })
+    .then(() => console.log('Words saved'))
+    .catch(error => console.error('Error:', error));
 
 let counter_videos_hidden = 0;
 let block_mode = "hide"; //hide, mark
-let muted_words = [
-    "Valorant", "Chillstep", "Lo-fi", "#shorts", "Gross", "AI", "LIFE"
-];
-
+let muted_words;
+console.log(browser.storage.local.get('wordList'));
+browser.storage.local.get('wordList')
+    .then(data => {console.log(muted_words = data.wordList)})
+    .catch(error => console.error('Error:', error));
+console.log(`WORDS: ${muted_words}`);
+// console.log(browser.storage.local.get('wordList'));
 
 function filter_out() {
-    const video_grid = document.querySelectorAll("#contents ytd-rich-item-renderer");
-    video_grid.forEach((element) => {
+    VIDEO_GRID.forEach((element) => {
+        // Second half makes it work on the subscriptions page
         const title = element.querySelector(TITLE_ELEM_NAME_MAIN_PAGE) || element.querySelector(TITLE_ELEM_NAME_SUBS_PAGE);
 
         if (title) {
@@ -44,4 +54,4 @@ filter_out();
 
 // Observe DOM changes for dynamic content
 const observer = new MutationObserver(filter_out);
-observer.observe(document.body, { childList: true, subtree: true });
+observer.observe(VIDEO_GRID, { childList: true, subtree: true });

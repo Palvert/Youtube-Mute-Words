@@ -5,7 +5,8 @@
   "description": "Hides Youtube videos with specified words in title",
   "permissions": [
     "activeTab",
-    "tabs"
+    "tabs",
+    "storage"
   ],
   "browser_action": {
     "default_popup": "gui.html",
