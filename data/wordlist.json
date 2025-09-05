@@ -1,5 +1,5 @@
 {
     "blacklist": [
-        "SCARED"
+        ["SCARED", 'W'],
     ]
 }

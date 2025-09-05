@@ -15,17 +15,7 @@
             <h4 id="text_part_2"> Mute Words</h4>
         </div>
         <div class="frame">
-            <!-- STATS section -->
-            <!-- <h1 class="header">📊 Stats</h1> -->
-            <!-- <hr> -->
-            <!-- <div class="middle_section" style="margin-top: 10px; margin-bottom: 10px;"> -->
-            <!--     <div class="counter"> -->
-            <!--         <p class="text_counter_name">Videos hidden:</p> -->
-            <!--         <p id="counter_videos_hidden" class="text_counter_dynamic"></p> -->
-            <!--     </div> -->
-            <!-- </div> -->
-
-            <!-- SETTINGS section -->
+            <!-- SETTINGS -->
             <!-- <h1 class="header">⚙️ Settings</h1> -->
             <!-- <hr> -->
             <!-- <div class="middle_section"> -->
@@ -33,14 +23,15 @@
             <!--     <input class="input_radio" type="checkbox"></input> -->
             <!-- </div> -->
 
-            <!-- WORD LIST section -->
+            <!-- WORD LIST -->
             <h1 class="header">📑 Word lists</h1>
             <hr>
             <div class="middle_section">
                 <div id="div_word_input">
+                    <input id=word_input class="input_text" type="text" placeholder="Enter word or phrase"></input>
                     <div class="horizontal">
-                        <input class="input_text" type="text" placeholder="Enter word or phrase"></input>
-                        <button id="btn_add_word" class="btn_normal">Add</button>
+                        <button id="btn_add_word_b" class="btn_normal">Add</button>
+                        <button id="btn_add_word_w" class="btn_normal">Add</button>
                     </div>
                 </div>
             </div>
@@ -58,11 +49,6 @@
                     </tr>
                 </table>
             </div>
-
-            <!-- <div class="btns_horizontal"> -->
-            <!--     <button id="btn_open_blacklist" class="btn_normal">⚫ Blacklist</button> -->
-            <!--     <button id="btn_open_whitelist" class="btn_normal">⚪ Whitelist</button> -->
-            <!-- </div> -->
         </div>
 
         <script src="js/gui.js"></script>

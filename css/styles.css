@@ -166,14 +166,6 @@ body {
     transition: var(--transition_speed);
 }
 
-#btn_open_blacklist {
-    width: 114px;
-}
-
-#btn_open_whitelist {
-    width: 114px;
-}
-
 .btns_horizontal {
     display: flex;
     flex-direction: row;
@@ -208,10 +200,17 @@ body {
     border: var(--border_width_frame) solid var(--border_clr);
 }
 
-#btn_add_word {
+#btn_add_word_b {
     width: 60px;
     height: 40px;
     border-radius: 10px;
+    color: var(--clr_type_b);
+}
+#btn_add_word_w {
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    color: var(--clr_type_w);
 }
 
 #btn_open_donate_usdt {
@@ -229,37 +228,6 @@ body {
     margin-left: 13px;
     margin-right: 13px;
     margin-bottom: 20px;
-}
-
-.counter {
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    .text_counter_name {
-        color: var(--clr_accent_light);
-        font-size: var(--text_size_normal);
-        margin: 0 10px;
-
-        /* For Border */
-        /* border: 2px solid var(--clr_accent_darker); */
-        /* border-top: none; */
-        /* border-right: none; */
-        /* padding: 0 4px 0 4px; */
-    }
-
-    .text_counter_dynamic {
-        margin: 0;
-        padding: 0;
-        color: var(--clr_accent_lighter); 
-        font-size: var(--text_size_normal);
-
-        /* For Border */
-        /* border: 2px solid var(--clr_accent_darker); */
-        /* border-bottom: none; */
-        /* border-left: none; */
-        /* padding: 0 4px 0 4px; */
-    }
 }
 
 #div_word_table {
@@ -287,16 +255,16 @@ body {
     }
 
     .div_col_word_type_b {
-        width: var(--icon_size_word_type);
-        height: var(--icon_size_word_type);
+        min-width: var(--icon_size_word_type);
+        min-height: var(--icon_size_word_type);
         background-color: var(--clr_type_b);
         border-radius: 100%;
         border: 2px solid var(--clr_accent);
         margin: 4px;
     }
     .div_col_word_type_w {
-        width: var(--icon_size_word_type);
-        height: var(--icon_size_word_type);
+        min-width: var(--icon_size_word_type);
+        min-height: var(--icon_size_word_type);
         background-color: var(--clr_type_w);
         border-radius: 100%;
         border: 2px solid var(--clr_accent);

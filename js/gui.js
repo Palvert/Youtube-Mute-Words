@@ -3,23 +3,29 @@
 //     window.open("donate_info_usdt.html", "_self");
 // });
 
-const btn_open_blacklist = document.querySelector("#btn_open_blacklist");
-btn_open_blacklist.addEventListener("click", () => {
-    window.open("blacklist.html", "_self");
+const word_input = document.querySelector("#word_input");
+const word_table = document.querySelector("#word_table");
+const btn_add_word = document.querySelector("#btn_add_word");
+btn_add_word.addEventListener("click", () => {
+  const new_row = document.createElement("tr");
+  new_row.innerHTML = `
+    <td><div class="div_col_word_type_w"></div></td>
+    <td class="td_col_word">${word_input.value}</td>
+    <td><button class="btn_normal">❌</button></td>
+  `;
+  word_table.appendChild(new_row);
 });
 
-const btn_open_whitelist = document.querySelector("#btn_open_whitelist");
-btn_open_whitelist.addEventListener("click", () => {
-    window.open("whitelist.html", "_self");
-});
 
-// document.querySelector("#counter_videos_hidden").textContent = msg_counter_value;
-// browser.runtime.onMessage((msg_counter_value) => {
-//     console.log(`MESSAGE RECEIVED ${msg_counter_value}`);
-//     document.querySelector("#counter_videos_hidden").textContent = msg_counter_value;
-// });
-
-
-//TODO: click on email to copy
-const contacts_email = document.querySelector("#contacts_email");
-//......
+/*
+    <tr>
+        <td><div class="div_col_word_type_w"></div></td>
+        <td class="td_col_word">Hello</td>
+        <td><button class="btn_normal">❌</button></td>
+    </tr>
+    <tr>
+        <td><div class="div_col_word_type_b"></div></td>
+        <td class="td_col_word">Success</td>
+        <td><button class="btn_normal">❌</button></td>
+    </tr>
+*/
