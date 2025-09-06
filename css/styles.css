@@ -34,7 +34,7 @@
     --text_size_normal: 18px;
     --text_size_shy: 14px;
     --main_frame_width: 300px;
-    --main_frame_height: 327px;
+    --main_frame_height: 370px;
     --inner_width: 280px;
 }
 
@@ -174,7 +174,7 @@ body {
 
 .input_text {
     font-size: 16px;
-    width: 180px;
+    width: 226px;
     height: 30px;
     background-color: var(--bg_clr);
     color: var(--clr_text);
@@ -189,6 +189,7 @@ body {
 .input_radio {
     background-color: var(--bg_clr);
     color: var(--clr_text);
+    cursor: pointer;
 }
 
 #div_word_input {
@@ -196,31 +197,40 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     /* align-items: center; */
-    height: 52px;
+    height: 96px;
     border: var(--border_width_frame) solid var(--border_clr);
 }
 
 #btn_add_word_b {
     width: 60px;
-    height: 40px;
+    height: 34px;
     border-radius: 10px;
-    color: var(--clr_type_b);
+    color: var(--clr_text);
+    margin: 0;
+    /* text-shadow: -1px -1px 0 var(--clr_accent_lighter), 1px -1px 0 var(--clr_accent_lighter), -1px 1px 0 var(--clr_accent_lighter), 1px 1px 0 var(--clr_accent_lighter); */
 }
 #btn_add_word_w {
     width: 60px;
-    height: 40px;
+    height: 34px;
     border-radius: 10px;
-    color: var(--clr_type_w);
+    color: var(--clr_text);
+    margin: 0;
 }
 
-#btn_open_donate_usdt {
-    width: 80px;
+#div_btn_del_word {
+    display: flex;
+    min-height: 46px;
+}
+#btn_del_word {
+    width: 124px;
+    margin: 10px 0 0 160px;
+    max-height: 32px;
 }
 
 .horizontal {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -230,6 +240,10 @@ body {
     margin-bottom: 20px;
 }
 
+#div_table_frame {
+    border: 1px solid var(--border_clr);
+    min-height: calc((32 * 5 + 2) * 1px); /*(row height * rows + border width)*/
+}
 #div_word_table {
     max-height: calc((32 * 5 + 2) * 1px); /*(row height * rows + border width)*/
     overflow-y: auto;

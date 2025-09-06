@@ -30,24 +30,30 @@
                 <div id="div_word_input">
                     <input id=word_input class="input_text" type="text" placeholder="Enter word or phrase"></input>
                     <div class="horizontal">
-                        <button id="btn_add_word_b" class="btn_normal">Add</button>
-                        <button id="btn_add_word_w" class="btn_normal">Add</button>
+                        <button id="btn_add_word_w" class="btn_normal" 
+                            title="Allow videos with this word, even if a title has a word you muted">Pass</button>
+                        <button id="btn_add_word_b" class="btn_normal" title="Mute this word to hide the videos which has it in their title">Mute</button>
                     </div>
                 </div>
             </div>
-            <div id="div_word_table" class="btns_horizontal">
-                <table id="word_table">
-                    <tr>
-                        <td><div class="div_col_word_type_w"></div></td>
-                        <td class="td_col_word">Hello</td>
-                        <td><button class="btn_normal">❌</button></td>
-                    </tr>
-                    <tr>
-                        <td><div class="div_col_word_type_b"></div></td>
-                        <td class="td_col_word">Success</td>
-                        <td><button class="btn_normal">❌</button></td>
-                    </tr>
-                </table>
+            <div id="div_table_frame">
+                <div id="div_word_table" class="btns_horizontal">
+                    <table id="word_table">
+                        <tr>
+                            <td><div class="div_col_word_type_w"></div></td>
+                            <td class="td_col_word">Hello</td>
+                            <td><input class="input_radio" type="checkbox"></input></td>
+                        </tr>
+                        <tr>
+                            <td><div class="div_col_word_type_b"></div></td>
+                            <td class="td_col_word">Success</td>
+                            <td><input class="input_radio" type="checkbox"></input></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="div_btn_del_word">
+            <button id="btn_del_word" class="btn_normal" title="Delete selected words from the list">Delete selected</button>
             </div>
         </div>
 
